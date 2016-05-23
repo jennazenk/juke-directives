@@ -1,19 +1,19 @@
 <table class='table' ng-show="songs.length">
     <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
+<!--         <th></th>
+ -->    <th>Name</th>
         <th>Artists</th>
         <th>Genres</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="song in songs" ng-class="{active: song === getCurrentSong() }">
-        <td>
+      <tr ng-repeat="song in songs" ng-class="{active: song === getCurrentSong() }" ng-click="toggle(song)">
+<!--         <td>
           <button class="btn btn-default btn-xs" ng-click="toggle(song)">
             <span class="glyphicon" ng-class="{ 'glyphicon-pause': isPlaying(song), 'glyphicon-play': !isPlaying(song) }"></span>
           </button>
-        </td>
+        </td> -->
         <td>{{ song.name }}</td>
         <td><span ng-repeat="artist in song.artists">{{ artist.name }}{{ $last ? '' : ', ' }}</span></td>
         <td>{{ song.genres.join(', ') }}</td>

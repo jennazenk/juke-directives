@@ -55,14 +55,40 @@ juke.directive('songsList', function(PlayerFactory) {
 			};
 
 			scope.toggle = function (song) {
+				console.log(scope.songs)
 				if (song !== PlayerFactory.getCurrentSong()) {
 				PlayerFactory.start(song, scope.songs);// to access the 'songs' we need to refer first to the scope and then songs
+				console.log('HERE')
 				} else if ( PlayerFactory.isPlaying() ) {
 				PlayerFactory.pause();
+				console.log('PAUSED')
+
 				} else {
 				PlayerFactory.resume();
+				console.log('RESUMED')
+		
 				}
 			};
 		}
 	}
 })
+
+juke.directive('doubleClick', function() {
+	return {
+		restrict: 'A',
+		scope : { // controls how it is gonna populate (for the ng-repeat)
+			doubleClick : '&'
+		},
+		link: function (scope, element) {
+			element.on('dblclick', function () {
+				scope.doubleClick();
+			})
+		}
+	}
+})
+
+
+
+
+
+

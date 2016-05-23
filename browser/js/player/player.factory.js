@@ -30,6 +30,7 @@ juke.factory('PlayerFactory', function ($rootScope) {
   player.start = function (song, list) {
     player.pause();
     audio.src = song.audioUrl;
+    console.log(audio.src);
     audio.load();
     currentSong = song;
     currentList = list;
