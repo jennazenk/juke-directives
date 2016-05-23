@@ -23,12 +23,15 @@
     <script src="/js/playlist/playlist.states.js" defer></script>
     <script src="/js/playlist/playlist.factory.js" defer></script>
     <script src="/js/playlist/playlist.controllers.js" defer></script>
+    <script src="/js/directives.js" defer></script>
   </head>
   <body ng-app="juke">
     <div id="main" class="container-fluid">
 
       <div class="col-xs-2">
-        <sidebar ng-controller="SidebarCtrl">
+
+        <sidebar></sidebar>
+        <!-- <sidebar ng-controller="SidebarCtrl">
           <img src="juke.svg" class="logo">
           <section>
             <h4 ui-sref-active="active" class="menu-item active">
@@ -52,15 +55,19 @@
               <a ui-sref="newPlaylist" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
             </p>
           </section>
-        </sidebar>
+        </sidebar> -->
       </div>
 
       <div class="col-xs-10">
+
         <ui-view></ui-view>
+        
       </div>
 
       <footer>
-        <div ng-show="getCurrentSong()" ng-controller="PlayerCtrl">
+
+        <player></player>
+        <!-- <div ng-show="getCurrentSong()" ng-controller="PlayerCtrl">
           <div class="pull-left">
             <button class="btn btn-default" ng-click="previous()">
               <span class="glyphicon glyphicon-step-backward"></span>
@@ -77,7 +84,7 @@
               <div class="progress-bar" ng-style="{width: getPercent() + '%'}"></div>
             </div>
           </div>
-        </div>
+        </div> -->
       </footer>
 
     </div>

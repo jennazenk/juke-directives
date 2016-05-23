@@ -26,7 +26,7 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('artist.albums', {
     url: '/albums',
-    templateUrl: '/js/artist/templates/artist-albums.html'
+    template: '<album-list albums = "artist.albums"></album-list>' //directive albumList with albums = artist.albums for the ng-repeat
   });
 
   $stateProvider.state('artist.songs', {

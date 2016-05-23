@@ -4,7 +4,7 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('albums', {
     url: '/albums',
-    templateUrl: '/js/album/templates/albums.html',
+    template: '<album-list albums = "albums"></album-list>', //directive albumList with albums = albums for the ng-repeat
     controller: 'AlbumsCtrl',
     resolve: {
       allAlbums: function (AlbumFactory) {
